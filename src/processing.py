@@ -28,6 +28,3 @@ def sort_by_date(user_list: list[dict], sorter: bool = True) -> list[dict]:
     # Сортировка списка словарей по по ключу date словарей (через lambda функцию где к - это словарь)
 
     return new_list
-
-
-
