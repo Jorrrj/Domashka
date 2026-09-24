@@ -82,3 +82,28 @@ def test_transactions_1():
         "from": "Счет 75106830613657916952",
         "to": "Счет 11776614605963066702",
     }
+
+
+@pytest.fixture
+def api_test():
+
+    return {
+        "success": True,
+        "query": {"from": "USD", "to": "RUB", "amount": 8221.37},
+        "info": {"timestamp": 1790269269, "rate": 85.004108},
+        "date": "2026-09-24",
+        "result": 698850.227495,
+    }
+
+
+@pytest.fixture
+def test_transactions_2():
+    return {
+        "id": 939719570,
+        "state": "EXECUTED",
+        "date": "2018-06-30T02:08:58.425572",
+        "operationAmount": {"amount": "9824.07", "currency": {"name": "RUB", "code": "RUB"}},
+        "description": "Перевод организации",
+        "from": "Счет 75106830613657916952",
+        "to": "Счет 11776614605963066702",
+    }
