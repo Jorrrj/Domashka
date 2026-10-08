@@ -5,11 +5,12 @@ from unittest.mock import Mock
 from src.utils import read_operations
 
 
-def test_read_operations(test_transactions):
+def test_read_operations(test_transactions, test_transactions_3):
     mock_json = Mock(return_value=test_transactions)
     json.load = mock_json
     assert (
-        read_operations(os.path.join(os.path.dirname(__file__), "..", "data", "operations.json")) == test_transactions
+        read_operations(os.path.join(os.path.dirname(__file__), "..", "data", "operations.json"))
+        == test_transactions_3
     )
 
 

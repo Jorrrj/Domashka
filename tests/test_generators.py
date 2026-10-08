@@ -3,11 +3,11 @@ import pytest
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
-def test_filter_by_currency(test_transactions, test_transactions_1):
-    assert next(filter_by_currency(test_transactions, "USD")) == test_transactions_1
+def test_filter_by_currency(test_transactions_3, test_transactions_4):
+    assert next(filter_by_currency(test_transactions_3, "USD")) == test_transactions_4
     assert next(filter_by_currency([], "USD")) == {}
     with pytest.raises(StopIteration):
-        next(filter_by_currency(test_transactions, "RUB"))
+        next(filter_by_currency(test_transactions_3, "RUB"))
 
 
 def test_transaction_descriptions(test_transactions):
