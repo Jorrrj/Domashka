@@ -24,4 +24,17 @@ def read_operations(path_file: str) -> list:
         logger.info("В файле нет списка")
     elif list_operations == []:
         print("Список операций пуст")
-    return list_operations
+    result_list = []
+    for i in list_operations:
+        res_dict = {}
+        res_dict["id"] = i.get("id")
+        res_dict["state"] = i.get("state")
+        res_dict["date"] = i.get("date")
+        res_dict["amount"] = i.get("operationAmount", {}).get("amount")
+        res_dict["currency_name"] = i.get("operationAmount", {}).get("currency", {}).get("name")
+        res_dict["currency_code"] = i.get("operationAmount", {}).get("currency", {}).get("code")
+        res_dict["from"] = i.get("from")
+        res_dict["to"] = i.get("to")
+        res_dict["description"] = i.get("description")
+        result_list.append(res_dict)
+    return result_list

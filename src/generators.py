@@ -5,7 +5,7 @@ def filter_by_currency(list_of_dicts, currency):
       где валюта операции соответствует заданной."""
     if len(list_of_dicts) != 0:
         for i in list_of_dicts:
-            if i.get("operationAmount").get("currency").get("name") == currency:
+            if i.get("currency_name") == currency:
                 yield i
     else:
         yield {}

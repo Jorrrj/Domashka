@@ -13,7 +13,7 @@ def get_mask_card_number(namber_card: str) -> str:
         namber_card_1 = namber_card[0:4] + " " + namber_card[4:6] + "** **** " + namber_card[12:]
         logger.info("Карта замаскирована")
     else:
-        namber_card_1 = "Ошибка данных"
+        namber_card_1 = ""
         logger.error("Ошибка данных")
 
     return namber_card_1
@@ -24,7 +24,7 @@ def get_mask_account(accaund_namber: str) -> str:
         accaund_namber_1 = "**" + accaund_namber[16:]
         logger.debug("Счет замаскирован")
     else:
-        accaund_namber_1 = "Ошибка данных"
+        accaund_namber_1 = ""
         logger.error("Ошибка данных")
 
     return accaund_namber_1
